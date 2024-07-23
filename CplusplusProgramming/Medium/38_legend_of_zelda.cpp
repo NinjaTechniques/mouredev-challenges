@@ -456,63 +456,142 @@ bool isLeapYear (int year) {
 
 
 /*Cantidad de dias bisiestos (adicionales) encontrados entre las 2 fechas*/
-int leapDaysBetweenDates (int highestYear, int lowestYear){ //year 1(mayor) - year 2(menor)
+int leapDaysBetweenDates (int highestYear, int lowestYear){ 
     int counter;
     int leapDays = 0;
 
-    for (int i = lowestYear; i <= highestYear; counter) {
+    for (int i = lowestYear; i <= highestYear; i += counter) {
         counter = 0;
         if (i % 4 == 0) {
             if (isLeapYear(i)) { leapDays++; }
             counter += 4;
         }
-        counter++;
+        counter = 1;
     }
+
+    return leapDays;
+}
+
+
+/*Validar que fecha es mayor*/
+int olderThanTwoYears (CustomDate date1, CustomDate date2) {
+    if (date1.getYear() > date2.getYear()) {
+      return 1;  
+    }
+    else if (date1.getYear() < date2.getYear())  {
+        return 2;
+    }
+
+    if (date1.getMonth() > date2.getMonth()) {
+        return 1;
+    }
+    else if (date1.getMonth() < date2.getMonth()) {
+        return 2;
+    }
+
+    if (date1.getDay() > date2.getDay()) {
+        return 1;
+    }
+    else if (date1.getDay() < date2.getDay()) {
+        return 2;
+    }
+
+    return 1;
 }
 
 
 /*Calcular el total de dias entre 2 fechas*/
-int totalDays (CustomDate highestDate, CustomDate lowestDate) { //date 1(mayor) - date 2(menor)
+int totalDays (CustomDate date1, CustomDate date2) {
+    CustomDate highestDate, lowestDate;
+
+    if (olderThanTwoYears(date1, date2) == 1) {
+        highestDate = date1;
+        lowestDate = date2;
+    }
+    else {
+        highestDate = date2;
+        lowestDate = date1;
+    }
+
     const int DAYS_PER_YEAR = 365;
     int total = 0;
 
     //Cantidad de dias que transcurre desde el inicio del año hasta la fecha 1 menos los 365 dias del año
-    //-> Este año no se contabiliza al sacar el "total", es decir, se debe restar 1.
     int dayshighestDate = DAYS_PER_YEAR - daysTable(highestDate.getDay(), highestDate.getMonth());
 
     //Cantidad de dias que transcurre desde el inicio del año hasta la fecha 2
+    //-> Este año no se contabiliza al sacar el "total", es decir, se debe restar 1.
     int dayslowestDate = daysTable(lowestDate.getDay(), lowestDate.getMonth());
 
     total = dayshighestDate + dayslowestDate + (((highestDate.getYear() - lowestDate.getYear()) - 1) * DAYS_PER_YEAR);
+    
+    //Agregar la cantidad de dias bisiestos entre las fechas
+    total += leapDaysBetweenDates(highestDate.getYear(), lowestDate.getYear());
 
     return total;
 }
 
+//Convertir el total de dias a texto legible en días, meses y años
+string convertToText (int totalDays) {
+    int years = totalDays / 365;
+    int months = (totalDays % 365) / 30;
+    int days = (totalDays % 365) % 30;
 
-
+    string text = "Years: " + to_string(years) + ", Months: " + to_string(months) + ", Days: " + to_string(days);
+    return text;
+}
 
 map<int, pair<string, CustomDate>> theLengendOfZeldaGames (){
     map<int, pair<string, CustomDate>> games; 
 
-    games[1] = {"The Legend of Zelda: Tears of the Kingdom", CustomDate(12, 5, 2023)};
-    games[2] = {"The Legend of Zelda: Skyward Sword HD", CustomDate(16,7,2021)};
-    games[3] = {"The Legend of Zelda: Link's Awakening", CustomDate(20,9,2019)};
+    games[1] = {"Tears of the Kingdom", CustomDate(12, 5, 2023)};
+    games[2] = {"Skyward Sword HD", CustomDate(16,7,2021)};
+    games[3] = {"Link's Awakening", CustomDate(20,9,2019)};
     games[4] = {"Cadence of Hyrule - Crypt of the NecroDancer featuring The Legend of Zelda", CustomDate(13,6,2019)};
-    games[5] = {"The Legend of Zelda: Breath of the Wild", CustomDate(3,3,2017)};
-    games[6] = {"The Legend of Zelda: Skyward Sword Wii", CustomDate(1,9,2016)};
-    games[7] = {"The Legend of Zelda: Twilight Princess HD", CustomDate(4,3,2016)};
-    games[8] = {"The Legend of Zelda: Tri Force Heroes", CustomDate(23,10,2015)};
-    games[9] = {"The Legend of Zelda: Majora's Mask 3D", CustomDate(13,2,2015)};
-    games[10] = {"The Legend of Zelda: A Link Between Worlds", CustomDate(22,11,2013)};
-    games[11] = {"The Legend of Zelda: The Wind Waker HD", CustomDate(4,10,2013)};
+    games[5] = {"Breath of the Wild", CustomDate(3,3,2017)};
+    games[6] = {"Skyward Sword Wii", CustomDate(1,9,2016)};
+    games[7] = {"Twilight Princess HD", CustomDate(4,3,2016)};
+    games[8] = {"Tri Force Heroes", CustomDate(23,10,2015)};
+    games[9] = {"Majora's Mask 3D", CustomDate(13,2,2015)};
+    games[10] = {"A Link Between Worlds", CustomDate(22,11,2013)};
+    games[11] = {"The Wind Waker HD", CustomDate(4,10,2013)};
 
     return games;
 }
 
+void showMenu (){
+    int option1 = 0, option2 = 0;
+
+    map<int, pair<string, CustomDate>> games = theLengendOfZeldaGames();
+    for (map<int, pair<string, CustomDate>>::iterator it = games.begin(); it != games.end(); it++) {
+        CustomDate date = it->second.second;
+        cout << "[" << it->first << "]: " << it->second.first << endl;
+    }
+    cout << endl << endl << "Select two games: " << endl;
+    cout << "OPTION 1: "; cin >> option1;
+    cout << "OPTION 2: "; cin >> option2;
+
+    cout << "\n\n";
+    cout << "Legend of Zelda" << endl;
+    
+    cout << games[option1].first << " || " << games[option1].second.getDay() << "/" << games[option1].second.getMonth() << "/" << games[option1].second.getYear() << endl;
+    cout << games[option2].first << " || " << games[option2].second.getDay() << "/" << games[option2].second.getMonth() << "/" << games[option2].second.getYear() << endl;
+    
+    cout << "\n";
+    cout << "Difference between game dates" << endl;
+
+    CustomDate date1 = games[option1].second;
+    CustomDate date2 = games[option2].second;
+    int days = totalDays(date1, date2);
+
+    cout << "Total days: " << days << endl;
+    cout << "Time: " << convertToText(days) << endl;
+}
 
 int main (){
     system("cls");
-    cout << "Legend of Zelda" << endl;
+    cout << " =========== [Legend of Zelda] =========== " << endl;
+    showMenu();
 
     cout << endl;
     return 0;
