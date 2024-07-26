@@ -1,0 +1,61 @@
+/*
+ * Escribe un programa que muestre por consola (con un print) los
+ * números de 1 a 100 (ambos incluidos y con un salto de línea entre
+ * cada impresión), sustituyendo los siguientes:
+ * - Múltiplos de 3 por la palabra "fizz".
+ * - Múltiplos de 5 por la palabra "buzz".
+ * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
+ */
+
+void fizzBuzz (int minValue, int maxValue){
+  Serial.println("MIN: " + String(minValue) + "  MAX: " + String(maxValue));
+  Serial.println("\n");
+
+  for (int i = minValue; i <= maxValue; i++) { 
+    if (i % 3 == 0 && i % 5 == 0) {
+      Serial.println("fizzbuzz"); 
+    }
+    else if (i % 3 == 0) {
+      Serial.println("fizz");
+    }
+    else if (i % 5 == 0) {
+      Serial.println("buzz"); 
+    }
+    else {
+      Serial.println(String(i));
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  Serial.print("Enter the min number: ");
+}
+
+void loop() {
+  static int step = 0; // Para seguir el paso de lectura
+  static int minValue, maxValue;
+  bool flag = false;
+  String input;
+
+  if (flag == false && Serial.available() > 0) { // Verifica si hay datos disponibles para leer
+    if(step == 0) { 
+      input = Serial.readStringUntil("\n"); // Lee el número introducido por el usuario como cadena
+      minValue = input.toInt(); // Convierte la cadena a un entero
+      step++;
+      Serial.println("\n"); 
+
+      Serial.print("Enter the max number: "); 
+    } 
+    else if (step == 1) {
+      input = Serial.readStringUntil("\n");
+      maxValue = input.toInt();
+      Serial.println("\n");
+
+      fizzBuzz(minValue, maxValue); // Call to fizzBuzz function
+      flag = true;
+    }
+  }
+
+  while (flag) { }
+}

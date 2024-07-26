@@ -1,0 +1,448 @@
+</div><h2 class="wp-block-heading" id="h-operadores-y-comparadores"><span id="Operadores_y_comparadores">Operadores y comparadores</span></h2><h3 class="wp-block-heading" id="h-comparadores"><span id="Comparadores">Comparadores</span></h3><pre class="wp-block-code"><code>//x igual a y
+x == y
+ 
+//x distinto de y
+x != y
+ 
+//x menor que y  
+x &lt; y 
+ 
+//x mayor que y
+x &gt; y
+ 
+//x menor o igual que y
+x &lt;= y
+ 
+//x mayor o igual que y
+x &gt;= y</code></pre><h3 class="wp-block-heading" id="h-operadores-aritmeticos"><span id="Operadores_aritmeticos">Operadores aritméticos</span></h3><pre class="wp-block-code"><code>//operador de asignación
+a = b
+ 
+//adición
+a + b
+ 
+//substracción
+a - b
+ 
+//multiplicación
+a * b
+ 
+//división
+a / b
+ 
+//modulo
+a % b</code></pre><h3 class="wp-block-heading" id="h-operadores-de-bits"><span id="Operadores_de_bits">Operadores de bits</span></h3><pre class="wp-block-code"><code>//and binario
+a &amp; b  
+ 
+//or binario
+a | b  
+ 
+//xor binario
+a ^ b  
+ 
+//not binario
+a ~ b  
+ 
+//desplazamiento a izquierda
+a &lt;&lt; b 
+ 
+//desplazamiento a derecha
+a &gt;&gt; b</code></pre><h3 class="wp-block-heading" id="h-operadores-compuestos"><span id="Operadores_compuestos">Operadores compuestos</span></h3><pre class="wp-block-code"><code>//incremento
+a++
+ 
+//decremento
+a--
+ 
+//adición compuesta
+a += b
+ 
+//substracción compuesta
+a -= b
+ 
+//multiplicación compuesta
+a *= b
+ 
+//división compuesta
+a /= b
+ 
+//and compuesto
+a &amp;= b
+ 
+//or compuesto
+a |= b</code></pre><h3 class="wp-block-heading" id="h-operadores-booleanos"><span id="Operadores_booleanos">Operadores booleanos</span></h3><pre class="wp-block-code"><code>//not
+!a
+ 
+//and
+a &amp;&amp; b
+ 
+//or
+a || b</code></pre><h3 class="wp-block-heading" id="h-operadores-de-acceso"><span id="Operadores_de_acceso">Operadores de acceso</span></h3><pre class="wp-block-code"><code>//operación indirección
+*variable
+ 
+//operación dirección
+&amp;variable</code></pre><h2 class="wp-block-heading" id="h-declaracion-y-conversion-de-tipos-de-variables"><span id="Declaracion_y_conversion_de_tipos_de_variables">Declaración y conversión de tipos de variables</span></h2><pre class="wp-block-code"><code>//tipo vacio (solo para funciones)
+void</code></pre><h3 class="wp-block-heading" id="h-booleanos"><span id="Booleanos">Booleanos</span></h3><pre class="wp-block-code"><code>//booleano, false o true
+boolean = false;</code></pre><h3 class="wp-block-heading" id="h-enteros"><span id="Enteros">Enteros</span></h3><pre class="wp-block-code"><code>//entero, 16 bits, de -32,768 a 32,767
+int var = 100;
+ 
+//entero, 16 bits, de 0 a 65535 (excepto en Due, donde son 32 bits)
+unsigned int var = 100;
+ 
+//entero, 16 bits, de 0 a 65535
+short var = 100;
+ 
+//entero, 32 bits, de -2,147,483,648 a 2,147,483,647
+long var = 100000L;
+ 
+//entero, 32bits, de 0 a 4,294,967,295
+unsigned long var = 100000L;</code></pre><h3 class="wp-block-heading" id="h-coma-flotante"><span id="Coma_flotante">Coma flotante</span></h3><pre class="wp-block-code"><code>//coma floante, 32 bits, de -3.4028235E+38 a 3.4028235E+38. Precision 6 digitos
+float var = 1.117;
+ 
+//idéntico a float, excepto en Arduino Due donde es flotante de 64 bits
+double var = 1.117;</code></pre><h3 class="wp-block-heading" id="h-bytes"><span id="Bytes">Bytes</span></h3><pre class="wp-block-code"><code>//8 bits, de 0 a 255
+byte var = B10010;
+ 
+//16bits, sin signo, de 0 a 65535
+word var = 10000;</code></pre><h3 class="wp-block-heading" id="h-caracteres"><span id="Caracteres">Caracteres</span></h3><pre class="wp-block-code"><code>//8 bits, de -128 a 127
+char var = 'A';
+ 
+//8 bits, de 0 a 255
+unsigned char var = 240;</code></pre><h3 class="wp-block-heading" id="h-conversion-entre-variables"><span id="Conversion_entre_variables">Conversión entre variables</span></h3><pre class="wp-block-code"><code>//convierte a char
+char(variable);
+ 
+//convierte a byte
+byte(variable);
+ 
+//convierte a int
+int(variable);
+ 
+//convierte a word
+word(variable);
+ 
+//convierte a long
+long(variable);
+ 
+//convierte a float
+float(variable);</code></pre><h3 class="wp-block-heading" id="h-cualificadores-de-variables"><span id="Cualificadores_de_variables">Cualificadores de variables</span></h3><pre class="wp-block-code"><code>//STATIC
+//Variables visibles únicamente en el interior de una función,
+//y cuyo valor se mantiene entre llamadas a la misma.
+static int  variable;
+ 
+//CONST
+//Variables cuyo valor no puede ser redefinido tras la inicialización
+const float pi = 3.14;
+ 
+//VOLATILE
+//Variables en las que se indica al compilador que no guarde en los registros 
+//del microprocesador, sino que fuerza la actualización en memoria. Esto se 
+//hace cuando existe la posibilidad de que el valor de la variable sea 
+//modificado por otro proceso que se ejecuta concurrentemente con el actual 
+//(por ejemplo cuando se emplean hilos o interrupciones)
+volatile int variable = LOW;</code></pre><h2 class="wp-block-heading" id="h-vectores"><span id="Vectores">Vectores</span></h2><h3 class="wp-block-heading" id="h-creacion-de-vectores"><span id="Creacion_de_vectores">Creación de vectores</span></h3><pre class="wp-block-code"><code>//declarar vector
+int miArray&#091;5];
+ 
+//iniciar vector
+int miArray&#091;] = {2, 4, 8, 3, 6};
+ 
+//declarar e iniciar vector
+int miArray&#091;5] = {2, 4, -8, 3, 2};</code></pre><h3 class="wp-block-heading" id="h-manipulacion-de-vectores"><span id="Manipulacion_de_vectores">Manipulación de vectores</span></h3><pre class="wp-block-code"><code>//asignar valor a elemento del vector
+miArray&#091;0] = 10;
+ 
+//obtener valor de elemento del vector
+x = miArray&#091;4];</code></pre><h2 class="wp-block-heading" id="h-cadenas-de-texto"><span id="Cadenas_de_texto">Cadenas de texto</span></h2><h3 class="wp-block-heading" id="h-textos-como-vectores-de-caracteres"><span id="Textos_como_vectores_de_caracteres">Textos como vectores de caracteres</span></h3><pre class="wp-block-code"><code>char cadena1&#091;15];
+char cadena2&#091;8]  = {'a', 'r', 'd', 'u', 'i', 'n', 'o'};
+char cadena3&#091;8]  = {'a', 'r', 'd', 'u', 'i', 'n', 'o', '\0'};
+char cadena4&#091; ]  = "texto";
+char cadena5&#091;8]  = "texto";
+char cadena6&#091;15] = "texto";
+ 
+//vector de cadenas
+char* cadenaArray&#091;]={"Cadena 1", "Cadena 2", "Cadena 3",
+"Cadena 4", "Cadena 5", "Cadena 6"};</code></pre><h3 class="wp-block-heading" id="h-textos-como-objeto-string"><span id="Textos_como_objeto_string">Textos como objeto string</span></h3><pre class="wp-block-code"><code>// literal de cadena de texto
+String txtMsg = "Hola";
+ 
+// convirtiendo un char a String
+String txtMsg =  String('a');
+ 
+// convirtiendo un literal a String
+String txtMsg =  String("Texto");
+ 
+// concatenando dos literales a String
+String txtMsg =  String("texto1" + "texto2");</code></pre><h2 class="wp-block-heading" id="h-condicionales"><span id="Condicionales">Condicionales</span></h2><h3 class="wp-block-heading" id="h-condicional-abreviado"><span id="Condicional_abreviado">Condicional abreviado</span></h3><pre class="wp-block-code"><code>condition ? true : false;</code></pre><h3 class="wp-block-heading" id="h-condicional-if"><span id="Condicional_if">Condicional if</span></h3><pre class="wp-block-code"><code>if (variable &lt; 10)
+{
+   // accion A
+}
+ 
+ 
+if (variable &lt; 10)
+{
+   // accion A
+}
+else
+{
+   // accion B
+}
+ 
+ 
+if (variable &lt; 10)
+{
+   // accion A
+}
+else if (variable &gt;= 100)
+{
+   // accion B
+}
+else
+{
+   // accion C
+}</code></pre><h3 class="wp-block-heading" id="h-condicional-switch-case-of"><span id="Condicional_switch_case_of">Condicional switch / case of</span></h3><pre class="wp-block-code"><code>switch (variable) {
+   case 1:
+     // accion A
+     break;
+   case 2:
+     //  accion B
+     break;
+   default: 
+     // caso por defecto (opcional)
+}</code></pre><h2 class="wp-block-heading" id="h-bucles"><span id="Bucles">Bucles</span></h2><h3 class="wp-block-heading" id="h-bucle-for"><span id="Bucle_for">Bucle for</span></h3><pre class="wp-block-code"><code>for (int i=0; i &lt;= 100; i++){
+   // accion
+}</code></pre><h3 class="wp-block-heading" id="h-bucle-while"><span id="Bucle_while">Bucle while</span></h3><pre class="wp-block-code"><code>variable = 0;
+ 
+while(variable &lt; 100){
+   // accion
+   variable++;
+}</code></pre><h3 class="wp-block-heading" id="h-bucle-do-while"><span id="Bucle_do_while">Bucle do while</span></h3><pre class="wp-block-code"><code>do
+{
+   //accion
+   variable++;
+} while (variable &lt; 100);</code></pre><h2 class="wp-block-heading" id="h-funciones-matematicas"><span id="Funciones_matematicas">Funciones matemáticas</span></h2><h3 class="wp-block-heading" id="h-funciones-de-rango"><span id="Funciones_de_rango">Funciones de rango</span></h3><pre class="wp-block-code"><code>//devuelve mínimo entra a y b
+min(a,b);
+ 
+//devuelve máximo entra a y b
+max(a,b);
+ 
+//devuelve valor absoluto de a
+abs(a);
+ 
+//devuelve x restringido a (a,b)
+constrain(x, a, b);
+ 
+//interpola linealmente y entre x1,y1 x2,y2
+map(x, x1, x2, y1, y2);</code></pre><h3 class="wp-block-heading" id="h-potenciacion"><span id="Potenciacion">Potenciación</span></h3><pre class="wp-block-code"><code>//devuelve a^b (ambos tipo float)
+pow(a,b);
+ 
+//devuelve la raiz cuadrada de a
+sqrt(a);</code></pre><h3 class="wp-block-heading" id="h-numeros-aleatorios"><span id="Numeros_aleatorios">Números aleatorios</span></h3><pre class="wp-block-code"><code>//inicializa la semilla del generador de numeros pseudo aleatorios
+randomSeed(semilla);
+ 
+//devuelve un número aleatorio entre a y b (ambos tipo long)
+random(a, b);</code></pre><h3 class="wp-block-heading" id="h-trigonometria"><span id="Trigonometria">Trigonometría</span></h3><pre class="wp-block-code"><code>//devuelve el seno de a (a tipo float y en radianes)
+sin(a);
+ 
+//devuelve el coseno de a (a tipo float y en radianes)
+cos(a);
+ 
+//devuelve la tangente de a (a tipo float y en radianes)
+tan(a);</code></pre><h3 class="wp-block-heading" id="h-funciones-de-bits-y-bytes"><span id="Funciones_de_bits_y_bytes">Funciones de bits y bytes</span></h3><pre class="wp-block-code"><code>//devuelve el byte menos signiticativo de una palabra o variable.
+lowByte(variable);
+ 
+//devuelve el byte más significativo de una palabra
+//(o el segundo byte menos significativo en variables mayores)
+highByte(variable);
+ 
+//devuelve el bit n de una variable x 
+//(siendo el bit 0 el menos significativo)
+bitRead(x, n);
+ 
+//escribe el bit n de la variable x con el valor b
+//(siendo el bit 0 el menos significativo)
+bitWrite(x, n,b );
+ 
+//pone a 1 el bit n de la variable x
+bitSet(x, n);
+ 
+//pone a 0 el bit n de la variable x
+bitClear(x, n);
+ 
+//obtiene el valor del bit n (idéntico a 2^n)
+bit(n);</code></pre><h2 class="wp-block-heading" id="h-funciones-de-textos"><span id="Funciones_de_textos">Funciones de textos</span></h2><pre class="wp-block-code"><code>//delvuelve el caracter en la posición 3 (idéntico a txtMsg&#091;3];)
+txtMsg.charAt(3);
+ 
+//sustituye el caracter en la posición 3 por "A" (idéntico a txtMsg&#091;3]="A";)
+txtMsg.setCharAt("A", 3);
+ 
+//concatena texto 1 y texto 2 (idéntico a texto1=texto1+texto2;)
+texto1.concat("texto2");
+ 
+//devuelve la longitud de la cadena
+txtMsg.length();
+ 
+//devuelve la cadena convertida en minúsculas
+txtMsg.toLowerCase();
+ 
+//devuelve la cadena convertida en mayúsculas
+txtMsg.toUpperCase();
+ 
+//elimina espacios y carácteres incorrectos
+txtMsg.trim();
+ 
+//devuelve la cadena de texto como entero
+txtMsg.toInt();</code></pre><h3 class="wp-block-heading" id="h-comparacion"><span id="Comparacion">Comparación</span></h3><pre class="wp-block-code"><code>//compara dos cadenas. Devuelve 1 si texto1 es mayor que texto2,
+//0 si son iguales, y -1 en caso contrario 
+texto1.compareTo(texto2);
+ 
+//compara si dos cadenas son iguales (idéntico a texto1==texto2)
+texto1.equals(texto2);
+ 
+//compara si dos cadenas son iguales, ignorando mayúsculas y minúsculas
+texto1.equalsIgnoreCase(texto2);</code></pre><h3 class="wp-block-heading" id="h-subcadenas"><span id="Subcadenas">Subcadenas</span></h3><pre class="wp-block-code"><code>//devuelve una subcadena de la posicion 3 a la 10
+txtMsg.substring(3, 10);
+ 
+//comprueba si la cadena empieza por "texto", con offset 3
+txtMsg.startsWith("texto", 3);
+ 
+//comprueba si la cadena empieza por "texto", con offset 3
+txtMsg.endsWith("texto");</code></pre><h3 class="wp-block-heading" id="h-busqueda-y-sustitucion"><span id="Busqueda_y_sustitucion">Búsqueda y sustitución</span></h3><pre class="wp-block-code"><code>//devuelve el índice de la primera ocurrencia de 'A',
+//a partir de la posición offset
+txtMsg.indexOf('A', offset);
+ 
+//devuelve el índice de la última ocurrencia de 'A'
+//previa a la posición offset
+txtMsg.lastIndexOf('A', offset);
+ 
+//sustituye las ocurrencias de "texto1" por "texto2"
+txtMsg.replace("texto1", "texto2");</code></pre><h2 class="wp-block-heading" id="h-funciones-de-usuario"><span id="Funciones_de_usuario">Funciones de usuario</span></h2><h3 class="wp-block-heading" id="h-variables-globales"><span id="Variables_globales">Variables globales</span></h3><pre class="wp-block-code"><code>int option=1;
+ 
+int cambiar(){
+  option=4;
+}
+ 
+void setup(){
+  Serial.begin(9600);
+}
+ 
+void loop(){
+  cambiar();
+  Serial.print(option);  //muestra 4
+  delay(10000);
+}</code></pre><h3 class="wp-block-heading" id="h-paso-de-parametros-por-referencia"><span id="Paso_de_parametros_por_referencia">Paso de parámetros por referencia</span></h3><pre class="wp-block-code"><code>int cambiar(int &amp;var){
+  var=4;
+}
+ 
+void setup(){
+  Serial.begin(9600);
+}
+ 
+void loop(){
+  int option=1;
+  cambiar(option);
+  Serial.print(option);    //muestra 4
+  delay(10000);
+}</code></pre><h3 class="wp-block-heading" id="h-paso-de-parametros-por-puntero"><span id="Paso_de_parametros_por_puntero">Paso de parámetros por puntero</span></h3><pre class="wp-block-code"><code>int cambiar(int* var){
+  *var=4;
+}
+ 
+void setup(){
+  Serial.begin(9600);
+}
+ 
+void loop(){
+  int option=1;
+  cambiar(&amp;option);
+  Serial.print(option);    //muestra 4
+  delay(10000);
+}</code></pre><h3 class="wp-block-heading" id="h-devolucion-de-valores"><span id="Devolucion_de_valores">Devolución de valores</span></h3><pre class="wp-block-code"><code>int cambiar(){
+  int var=4;
+  return var;
+}
+ 
+void setup(){
+  Serial.begin(9600);
+}
+ 
+void loop(){
+  int option=1;
+  option=cambiar();
+  Serial.print(option);    //muestra 4
+  delay(10000);
+}</code></pre><h2 class="wp-block-heading" id="h-tipos-de-datos-avanzados"><span id="Tipos_de_datos_avanzados">Tipos de datos avanzados</span></h2><h3 class="wp-block-heading" id="h-enumeraciones"><span id="Enumeraciones">Enumeraciones</span></h3><pre class="wp-block-code"><code>//declaracion
+enum miEnumeracion {
+  opcion1,
+  opcion2,
+  opcion3
+};
+ 
+//ejemplo de uso
+miEnumeracion variable = opcion2;
+ 
+if (variable==opcion2){
+  //accion
+}</code></pre><h3 class="wp-block-heading" id="h-estructuras"><span id="Estructuras">Estructuras</span></h3><pre class="wp-block-code"><code>//declaracion
+struct miEstructura
+{
+   int  campo1;
+   int  campo2;
+   char campo3;
+};
+ 
+//ejemplo de uso
+struct miEstructura variable;
+ 
+variable.campo1=10;</code></pre><h3 class="wp-block-heading" id="h-definicion-de-tipos-de-datos-de-usuario"><span id="Definicion_de_tipos_de_datos_de_usuario">Definición de tipos de datos de usuario</span></h3><pre class="wp-block-code"><code>//declaraciones
+typedef int nuevotipo;
+typedef enum miEnumeracion nuevotipo;
+typedef struct miEstructura nuevotipo;
+ 
+//ejemplo de uso
+nuevotipo variable;</code></pre><h2 class="wp-block-heading" id="h-clases"><span id="Clases">Clases</span></h2><h3 class="wp-block-heading" id="h-ejemplo-de-uso-de-clase"><span id="Ejemplo_de_uso_de_clase">Ejemplo de uso de clase</span></h3><pre class="wp-block-code"><code>class MiRobot;
+ 
+//definicion de clase ejemplo
+class MiRobot
+{
+public:
+  void saludar();    //muestra "Hola"
+  void incCont();    //incrementa contador
+  int  getCont();    //devuelve contador
+  void sayCont();    //muestra valor contador
+  void setCont(int); //inicializa contador a un valor
+private:
+  int cont=0;       //variable contador privada
+};
+ 
+//muestra "Hola"
+void MiRobot::saludar(){
+  Serial.println("Hola");
+}
+ 
+void MiRobot::incCont(){
+  this-&gt;cont++;
+}
+ 
+//devuelve contador
+int MiRobot::getCont(){
+  return this-&gt;cont;
+}
+ 
+//muestra valor contador
+void MiRobot::sayCont(){
+  Serial.println(this-&gt;cont);
+}
+ 
+//inicializa contador a un valor
+void MiRobot::setCont(int _cont){
+  this-&gt;cont=_cont;
+}
+ 
+MiRobot robot;
+void setup(){
+  Serial.println("Iniciando");
+  Serial.begin(9600); 
+ 
+  robot.saludar();    //se muestra hola
+}
+ 
+void loop(){
+  robot.incCont();   //se incrementa el contador
+  robot.sayCont();   //muestra el valor
+  delay(1000);
+}</code></pre></div>
+
