@@ -1,9 +1,18 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug TypeScript",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/Challenges/dev_typescript/compilers/src/index.ts",
+            "preLaunchTask": "tsc: build - Challenges/dev_typescript/compilers/tsconfig.json",
+            "outFiles": ["${workspaceFolder}/Challenges/dev_typescript/compilers/dist/**/*.js"],
+            "cwd": "${workspaceFolder}/Challenges/dev_typescript/compilers"
+        },
         {
             "name": "C++ Fushiguro Debugger",
             "type": "cppdbg",
@@ -24,6 +33,5 @@
                 }
             ]
         }
-
     ]
 }
