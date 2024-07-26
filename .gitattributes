@@ -1,0 +1,7 @@
+# Forzar LF en archivos TypeScript y JavaScript
+*.ts text eol=lf
+*.js text eol=lf
+
+# Ignorar archivos en la carpeta dist
+/Fundamentals/microsoft_typescript/dist/* -text
+/Challenges/dev_typescript/compilers/dist/* -text
