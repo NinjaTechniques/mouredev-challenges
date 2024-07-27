@@ -30,4 +30,28 @@ var Sizes;
 let mySize = Sizes.ExtraLarge;
 console.log(mySize);
 const state = 2;
+const myObject = {
+    name: "Jazmin",
+    age: 25,
+    size: Sizes.Medium
+};
+myObject.name = "Melanie";
+const myObject2 = {
+    id: 1,
+    username: "leidy_11",
+};
+myObject2.id = 2;
+const myObjet3 = {
+    person_id: 1,
+    name: "Jazmin",
+    lastname: "Gonzalez",
+    age: 25,
+    email: "jazmin@me.com",
+    address: {
+        numberAddress: 123,
+        street: "Calle falsa 123",
+        city: "NY"
+    }
+};
+const arrayPerson = [];
 //# sourceMappingURL=index.js.map

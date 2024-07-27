@@ -39,8 +39,41 @@ let myVariable
 myVariable = 10
 myVariable = false
 
+/* Any: Cualquier tipo de dato
+! Any IGNORA el tipado de TypeScript
+? Con any ya no reconoce, por ejemplo, las funciones del string "Leidy" (se quita el autocompletado)
+*/
+//let anyValue: any = "Leidy"
+//anyValue.gdfsadfasdfasdfas -> No te dice el ERROR (PELIGRO)
+
+
+/*Unknown
+=> Es como decir, "no se que tipo de dato es".
+=> No puedes usar propiedades que no sabemos si existen, porque no sabemos el tipo.
+*/
+let unknownValue: unknown = "Leidy"
+//unknownValue.asdfa -> Menciona como ERROR
+
+
 /*Functions*/
 function add (a: number, b: number) { return a + b }
+
+/*Forma 1 de tipar un objeto en una funcion
+
+ => Hay que tener cuidado con hacer esto {name: string, age: number} porque esa forma no es compatible con JavaScript, pues lo que hace es decir que "name" se cabmie de nombre a "string" y "age" se renombra a "number". Entonces, no esta tipando sus tipos, estas cambiando el nombre del atributo.
+*/
+function greet ({name, age}: { name: string, age: number }) {
+    console.log( `Hello, my name is ${name} and I am ${age} years old.`)
+}
+   
+
+/*Forma 2 de tipar un objeto en una funcion*/
+
+function greet2 (person: { name: string, age: number }) {
+    const { name, age } = person
+    console.log( `Hello, my name is ${name} and I am ${age} years old.`)
+}
+
 let animals: string[] = ["cat", "dog", "chicken"]
 let checks: boolean[] = []
 let numbers: Array<number> = [1, 2, 3]
