@@ -1,0 +1,15 @@
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\bin\Debug\net8.0\problems_solved.exe
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\bin\Debug\net8.0\problems_solved.deps.json
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\bin\Debug\net8.0\problems_solved.runtimeconfig.json
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\bin\Debug\net8.0\problems_solved.dll
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\bin\Debug\net8.0\problems_solved.pdb
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.GeneratedMSBuildEditorConfig.editorconfig
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.AssemblyInfoInputs.cache
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.AssemblyInfo.cs
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.csproj.CoreCompileInputs.cache
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.sourcelink.json
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.dll
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\refint\problems_solved.dll
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.pdb
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\problems_solved.genruntimeconfig.cache
+M:\yasper_dev\extreme_programming\dev_programmation_logic\challengeProgramming\Challenges\dev_csharp\problems_solved\obj\Debug\net8.0\ref\problems_solved.dll
