@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fundamentals", "Fundamentals", "{55DCE208-1CBB-42F8-BDD0-E274C202F0B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "anders_hejisberg_microsoft_csharp", "anders_hejisberg_microsoft_csharp", "{7C0FCDD1-9C2A-4E6B-968D-F7E865A462A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp_sintax", "Fundamentals\anders_hejisberg_microsoft_csharp\csharp_sintax\csharp_sintax.csproj", "{24FDBDB4-00D0-4E22-B65C-1D1D69419450}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24FDBDB4-00D0-4E22-B65C-1D1D69419450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FDBDB4-00D0-4E22-B65C-1D1D69419450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FDBDB4-00D0-4E22-B65C-1D1D69419450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FDBDB4-00D0-4E22-B65C-1D1D69419450}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C0FCDD1-9C2A-4E6B-968D-F7E865A462A5} = {55DCE208-1CBB-42F8-BDD0-E274C202F0B1}
+		{24FDBDB4-00D0-4E22-B65C-1D1D69419450} = {7C0FCDD1-9C2A-4E6B-968D-F7E865A462A5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FD24345-4BF6-4A35-AE60-AB1F43C13EFB}
+	EndGlobalSection
+EndGlobal
