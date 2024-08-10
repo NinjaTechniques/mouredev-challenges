@@ -11,7 +11,15 @@ let extints = true;
 let myVariable;
 myVariable = 10;
 myVariable = false;
+let unknownValue = "Leidy";
 function add(a, b) { return a + b; }
+function greet({ name, age }) {
+    console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+}
+function greet2(person) {
+    const { name, age } = person;
+    console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+}
 let animals = ["cat", "dog", "chicken"];
 let checks = [];
 let numbers = [1, 2, 3];

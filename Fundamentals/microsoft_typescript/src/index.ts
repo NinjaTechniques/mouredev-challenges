@@ -39,7 +39,8 @@ let myVariable
 myVariable = 10
 myVariable = false
 
-/* Any: Cualquier tipo de dato
+/*
+* Any: Cualquier tipo de dato
 ! Any IGNORA el tipado de TypeScript
 ? Con any ya no reconoce, por ejemplo, las funciones del string "Leidy" (se quita el autocompletado)
 */
@@ -47,7 +48,8 @@ myVariable = false
 //anyValue.gdfsadfasdfasdfas -> No te dice el ERROR (PELIGRO)
 
 
-/*Unknown
+/*
+* Unknown
 => Es como decir, "no se que tipo de dato es".
 => No puedes usar propiedades que no sabemos si existen, porque no sabemos el tipo.
 */
@@ -55,24 +57,60 @@ let unknownValue: unknown = "Leidy"
 //unknownValue.asdfa -> Menciona como ERROR
 
 
-/*Functions*/
+
+
+
+
+/*
+* Functions
+*/
 function add (a: number, b: number) { return a + b }
 
 /*Forma 1 de tipar un objeto en una funcion
 
- => Hay que tener cuidado con hacer esto {name: string, age: number} porque esa forma no es compatible con JavaScript, pues lo que hace es decir que "name" se cabmie de nombre a "string" y "age" se renombra a "number". Entonces, no esta tipando sus tipos, estas cambiando el nombre del atributo.
+ => Hay que tener cuidado con hacer esto {name: string, age: number} porque esa forma no es compatible con JavaScript, pues lo que hace es decir que "name" se cambie de nombre a "string" y "age" se renombra a "number". Entonces, no esta tipando sus tipos, estas cambiando el nombre del atributo.
 */
 function greet ({name, age}: { name: string, age: number }) {
     console.log( `Hello, my name is ${name} and I am ${age} years old.`)
 }
    
-
 /*Forma 2 de tipar un objeto en una funcion*/
 
 function greet2 (person: { name: string, age: number }) {
     const { name, age } = person
     console.log( `Hello, my name is ${name} and I am ${age} years old.`)
 }
+
+
+/*Forma 3 de tipar un objeto en una funcion*/
+//Recibe un Arrow Function como argumento
+//!Hay que evita el tipado con "FUNCTION" ya que es el ANY de las funciones
+const sayHiFromFunction = (fn: (name: string) => void) => {
+    fn("Leidy")
+}
+
+const myFunction = (name: string) => {
+    console.log(`Hello, my name is ${name}`)
+}
+
+sayHiFromFunction(myFunction)
+
+/*Tpar las Arrow Functions*/
+const sum = (a: number, b: number): number => {
+    return a + b
+}
+
+const substract = (a: number, b: number) => {
+    return a - b
+}
+
+
+//* NEVER: Funciones que nunca van a devolver nada
+function throwError(message: string): never {
+    throw new Error(message)
+}
+
+
 
 let animals: string[] = ["cat", "dog", "chicken"]
 let checks: boolean[] = []
@@ -81,14 +119,20 @@ let numbers: Array<number> = [1, 2, 3]
 //Map en JS: Permite iterar un arreglo y asignarles una funcion
 //animals.map(x => x.) => El autocompletado sugiere metodos del tipo de dato que se use.
 
-/*Tuplas
+
+
+
+
+
+/*
+* Tuplas
     -> En JS no existen tuplas, pero en TypeScript si.
     -> Las tuplas nos permiten guardar datos siempre y cuando esten definidos.
 */
 let tupla: [number, string[], boolean] = [
     1, 
     ["Jazmin", "Melanie", "Leidy"],
-    true
+    true,
 ]
 
 /*
@@ -99,7 +143,17 @@ number | string[] | boolean | number
 */
 //tupla.push(10)
 
-/*Enums
+
+
+
+
+
+
+
+
+
+/*
+*Enums
  -> En JS no existen enums, pero en TypeScript si.
  -> Los enums nos permiten definir una serie de valores constantes.
  -> Se debe usar PascalCase
@@ -118,11 +172,19 @@ const enum LoadingState {Idle, Loading, Success, Error}
 const state = LoadingState.Success
 
 
-/*Objects*/
+
+
+
+
+
+
+/*
+* Objects
+*/
 const myObject: {name: string, age: number, size: Sizes} = {
     name: "Jazmin",
     age: 25,
-    size: Sizes.Medium
+    size: Sizes.Medium,
 }
 myObject.name = "Melanie"
 
