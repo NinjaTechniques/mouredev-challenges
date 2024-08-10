@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {}
+    "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {}
   },
   "projects": {
-    "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {
+    "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
+        "projectUniqueName": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
         "projectName": "csharp_sintax",
-        "projectPath": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
+        "projectPath": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
         "packagesPath": "C:\\Users\\YASPER\\.nuget\\packages\\",
-        "outputPath": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\obj\\",
+        "outputPath": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\YASPER\\AppData\\Roaming\\NuGet\\NuGet.Config",
