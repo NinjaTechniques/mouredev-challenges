@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {}
+    "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {}
   },
   "projects": {
-    "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {
+    "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
+        "projectUniqueName": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
         "projectName": "csharp_sintax",
-        "projectPath": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
+        "projectPath": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\csharp_sintax.csproj",
         "packagesPath": "C:\\Users\\YASPER\\.nuget\\packages\\",
-        "outputPath": "M:\\1_yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\obj\\",
+        "outputPath": "M:\\yasper_dev\\extreme_programming\\dev_programmation_logic\\challengeProgramming\\Fundamentals\\anders_hejisberg_microsoft_csharp\\csharp_sintax\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\YASPER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

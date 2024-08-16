@@ -105,7 +105,7 @@ const substract = (a: number, b: number) => {
 }
 
 
-//* NEVER: Funciones que nunca van a devolver nada
+//* NEVER: Funciones que nunca van a devolver nada, es decir, que nunca va a terminar de ejecutarse.
 function throwError(message: string): never {
     throw new Error(message)
 }
@@ -119,9 +119,18 @@ let numbers: Array<number> = [1, 2, 3]
 //Map en JS: Permite iterar un arreglo y asignarles una funcion
 //animals.map(x => x.) => El autocompletado sugiere metodos del tipo de dato que se use.
 
+//* Inferencia de funciones anonimas segun el contexto
+const avengers = ["Spidey", "Hulk", "Hawkeye"]
 
+avengers.forEach(avenger => { // Infiere el tipo de dato y te recomienda el autocompletado
+    console.log(avenger.toUpperCase())
+})
 
-
+avengers.forEach(
+    function(avenger) { //Infiere el tipo de dato y te recomienda el autocompletado
+        console.log(avenger.toUpperCase())
+    }
+)
 
 
 /*
@@ -227,3 +236,169 @@ const myObjet3: Person = {
 // myObjet3.person_id = 2 => No se puede reasignar, ya que se puso como readonly
 
 const arrayPerson: Person[] = []
+
+
+//*Type Alias
+type Hero = {
+    name: string,
+    age: number,
+}
+
+let hero: Hero  = {
+    name: "Spiderman",
+    age: 25
+}
+
+function createHero (hero: Hero): Hero{
+    const {name, age} = hero
+    return {name, age}
+}
+
+const thor = createHero({name: "Thor", age: 1000})
+
+
+//*Optional Properties
+//BACKTICK: ALT + 96
+type HeroId = `${string}-${string}-${string}-${string}-${string}`
+
+//*Union Types
+type HeroPowerScale = "local" | "planetary" | "galactic" | "universal"
+//const enableAnimationDuration: boolean | number = 200 
+
+type HeroBasicInfo = {
+    name: string,
+    age: number,
+}
+
+type HeroProperties = {
+    readonly id?: HeroId
+    isActive?: boolean
+    powerScale?: HeroPowerScale
+}
+
+//* Intersection Types
+type Hero2 = HeroBasicInfo & HeroProperties
+
+let hero2: Hero2  = {
+    name: "Ironman",
+    age: 25
+}
+
+function createHero2 (input: HeroBasicInfo): Hero2 {
+    const {name, age} = input
+    return {
+        id: crypto.randomUUID(), 
+        name, 
+        age, 
+        isActive: true
+    }
+}
+
+const hulk = createHero2({name: "Hulk", age: 5_000_000})
+console.log(hulk.isActive) // -> true
+hulk.id?.toString() // -> undefined or number / Pregunta si existe antes de continuar
+hulk.powerScale = "galactic"
+
+/* -> No se puede reasignar, ya que se puso como readonly
+- El valor no se puso INMUTABLE, si no que mientras se desarrolla, lanza el error.
+- En JS el valor si se puede reasignar, pero en TS no.
+*/
+//hulk.id = 20 
+
+//* Template Union Types
+type HexadecimalColor = `#${string}`
+//const color: HexadecimalColor = "0030ff" => Error
+const color2: HexadecimalColor = "#ff0030"
+
+
+//* Type Indexing
+type CharacterProperties = {
+    isActive: boolean,
+    address: {
+        planet: string,
+        city: string
+    }
+}
+
+const addressCharacter: CharacterProperties["address"] = {
+    planet: "Earth",
+    city: "New York"
+}
+
+//* Type From Value
+
+const address = {
+    planet: "Earth",
+    city: "London"
+}
+
+type AddressCity = typeof address //Typeof: extraer el tipo de un objeto, funciones, etc.
+
+const addressTwitch: AddressCity = {
+    planet: "Mars",
+    city: "San Francisco"
+}
+
+//* Type From Function Return
+function createAddress (){
+    return {
+        planet: "Mars",
+        city: "Berlin"
+    }
+}
+
+type AddressCity2 = ReturnType<typeof createAddress> // Recupera tipos de la funcion 
+
+
+//* Arrays
+const languages: string[] = [] // Array solo para strings
+languages.push("TypeScript")
+languages.push("JavaScript")
+languages.push("Python")
+
+/*
+const container: string[] | number[] = [1, 2, 3, 4, 5, 6, 7] // Array solo de strings o solo de numbers
+container.push(8)
+container.push(9)
+*/
+
+const container: string[] | number[] = ["TypeScript", "JavaScript"] // Array solo de strings o solo de numbers
+container.push("Java")
+container.push("C#")
+
+const arrayMultiValue: (string | number)[] = []
+arrayMultiValue.push("C++")
+arrayMultiValue.push(1)
+arrayMultiValue.push("Go")
+arrayMultiValue.push(14)
+//arrayMultiValue.push(true) -> ERROR
+
+
+//* Matrices or Array Multi-Dimensional
+/* Juego del gato
+[
+    ["x", "o", "x"],
+    ["o", "x", "o"],
+    ["x", "", "o"]
+]
+*/
+
+//Usando Union Types
+type CellValue = "x" | "o" | ""
+
+//Using TUPLA: Es un arreglo que tiene una longitud fija o limite
+type GameBoard = [
+    [CellValue, CellValue, CellValue],
+    [CellValue, CellValue, CellValue],
+    [CellValue, CellValue, CellValue]
+]
+
+const board: GameBoard = [
+    ["x", "o", "x"],
+    ["o", "x", "o"],
+    ["x", "", "o"]
+]
+
+type RGB = [number, number, number]
+const rgb: RGB = [255, 255, 255]
+//const rgb: RGB = [255, 255, 255, "f"] -> Error

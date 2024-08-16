@@ -24,29 +24,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-function isAnagram(word1, word2) {
-    word1 = word1.split("").sort().join("");
-    word2 = word2.split("").sort().join("");
-    let j = word1.length - 1;
-    let mid = Math.floor(word1.length / 2);
-    for (let i = 0; i < mid; i++) {
-        if (word1[i] != word2[i] || word1[j] != word2[j]) {
-            return false;
+function fibonacci(finalValue) {
+    let a = 0;
+    let b = 1;
+    let accumulated = 0;
+    for (let i = 1; i < finalValue; i++) {
+        if (i == 1) {
+            console.log(a);
         }
-        j--;
+        if (i == 2) {
+            console.log(b);
+        }
+        accumulated = a + b;
+        console.log(`${accumulated}, `);
+        a = b;
+        b = accumulated;
     }
-    return true;
 }
 function main() {
     console.log("\n\n");
-    const word1 = readlineSync.question("Enter a word 1: ");
-    const word2 = readlineSync.question("Enter a word 2: ");
-    if (isAnagram(word1, word2)) {
-        console.log(`"${word1}" and "${word2}" are anagrams`);
-    }
-    else {
-        console.log(`"${word1}" and "${word2}" are not anagrams`);
-    }
+    const finalValue = readlineSync.questionInt("Enter a number: ");
+    console.log("\n");
+    fibonacci(finalValue);
     console.log("\n\n");
 }
 main();
